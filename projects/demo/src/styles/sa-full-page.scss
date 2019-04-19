@@ -1,0 +1,18 @@
+// --- specific full page layout without messing with document/body width
+// full-page on a div will to use entire viewport's size
+// full-page-main on a child div (of full-page) will expand the div
+// multiple full-page-main will share space equally
+[full-page] {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+[full-page-main] {
+  flex-grow: 1;
+}

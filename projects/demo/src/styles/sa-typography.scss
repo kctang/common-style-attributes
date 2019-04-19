@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+
+$typography-config: mat-typography-config(
+        $font-family: 'Roboto, "Helvetica Neue", sans-serif'
+);
+@include mat-core($typography-config);
+
+@mixin app-typography($level: 'body-1') {
+  @include mat-typography-level-to-styles($typography-config, $level)
+}
+
+[typography-display-4] {
+  @include app-typography('display-4');
+  opacity: 0.54;
+}
+
+[typography-display-3] {
+  @include app-typography('display-3');
+  opacity: 0.54;
+}
+
+[typography-display-2] {
+  @include app-typography('display-2');
+  opacity: 0.54;
+}
+
+[typography-display-1] {
+  @include app-typography('display-1');
+  opacity: 0.54;
+}
+
+[typography-caption] {
+  @include app-typography('caption');
+  opacity: 0.54;
+}
+
+[typography-headline] {
+  @include app-typography('headline');
+  opacity: 0.87;
+}
+
+[typography-title] {
+  @include app-typography('title');
+  opacity: 0.87;
+}
+
+[typography-subheading-2] {
+  @include app-typography('subheading-2');
+  opacity: 0.87;
+}
+
+[typography-subheading-1] {
+  @include app-typography('subheading-1');
+  opacity: 0.87;
+}
+
+[typography-body-1] {
+  @include app-typography('body-1');
+  opacity: 0.87;
+}
+
+[typography-body-2] {
+  @include app-typography('body-2');
+  opacity: 0.87;
+}
+
+[typography-button] {
+  @include app-typography('button');
+  opacity: 0.87;
+}
+
+[typography-input] {
+  @include app-typography('input');
+  opacity: 0.87;
+}
