@@ -1,12 +1,6 @@
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
+@import "sa-core";
 
 $gridConfig: (
-        gutterSize: 4px,
         phone: (
                 cells: (
                         cell-1: 25%,
@@ -42,7 +36,7 @@ $gridConfig: (
         desktop: (
                 cells: (
                         cell-1: 8.33%,
-                        cell-2: 16.67%,
+                        cell-2: 16.66%,
                         cell-3: 25%,
                         cell-4: 33.33%,
                         cell-5: 41.67%,
@@ -59,182 +53,119 @@ $gridConfig: (
 
 [grow] {
   flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
+}
+
+[grow-items] {
+  > * {
+    flex-grow: 1;
+  }
 }
 
 [shrink] {
   flex-shrink: 1;
-  flex-basis: auto;
 }
 
-[flex-cell] {
+[left] {
   display: flex;
-  flex-wrap: wrap;
-  //padding: 0;
-  //margin: 0;
-  box-sizing: border-box;
+  justify-content: flex-start;
+}
 
-  &[default-cell-12] > *, &[gutter][default-cell-12] > * {
-    flex-basis: 100%;
-  }
+[right] {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  [left], .left {
+[top] {
+  display: flex;
+  align-items: flex-start;
+}
+
+[bottom] {
+  display: flex;
+  align-items: flex-end;
+}
+
+[vcenter] {
+  display: flex;
+  align-items: center;
+}
+
+[center] {
+  // does not work on MSIE 11
+  // https://caniuse.com/#search=flexbox
+  //
+  // best effort tweak for MSIE 11 (apply via media query if need)
+  // https://stackoverflow.com/questions/953918/how-to-align-a-div-to-the-middle-horizontally-width-of-the-page
+  // width: 100%;
+  // margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-cell-rules($device, $gutterSize: 4px) {
+  [flex-cell] {
     display: flex;
-    justify-content: flex-start;
-  }
+    flex-wrap: wrap;
 
-  [right], .right {
-    display: flex;
-    justify-content: flex-end;
-  }
+    // specificity for default cell size specified from parent must win over "default cell size"
+    &[default-cell-12][default-cell-12][default-cell-12][default-cell-12][default-cell-12] > * {
+      flex-basis: 100%;
+    }
 
-  [center], .center {
-    // does not work on MSIE 11
-    // https://caniuse.com/#search=flexbox
-    //
-    // best effort tweak for MSIE 11 (apply via media query if need)
-    // https://stackoverflow.com/questions/953918/how-to-align-a-div-to-the-middle-horizontally-width-of-the-page
-    // width: 100%;
-    // margin: 0 auto;
+    &[gutter] {
+      margin: calc(#{$gutterSize * -1});
 
-    display: flex;
-    justify-content: center;
-  }
-
-  [top], .top {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  [bottom], .bottom {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  [vcenter], .vcenter {
-    display: flex;
-    align-items: center;
-  }
-
-  &[debug] {
-    > * {
-      background: linear-gradient(45deg, yellow, cyan);
+      > * {
+        margin: calc(#{$gutterSize});
+      }
     }
   }
-}
 
-// Q: should gutter size be device specific? if yes, enhance.
-$gutterSize: map-get($gridConfig, 'gutterSize');
-[flex-cell][gutter] {
-  margin: calc(#{$gutterSize * -1});
-
-  > * {
-    margin: calc(#{$gutterSize});
-  }
-}
-
-// phone (4 columns per row)
-@media (max-width: map-get($device-breakpoints, 'tablet')-1) {
   // --- with gutter
-  [flex-cell][gutter][default-cell-6] > * {
-    flex-basis: calc(#{map-deep-get($gridConfig, 'phone', 'cells', 'cell-6')} - #{$gutterSize * 2});
+  [flex-cell][gutter][default-cell-6] > *:not([grow]):not([shrink]) {
+    flex-basis: calc(#{map-deep-get($gridConfig, $device, 'cells', 'cell-6')} - #{$gutterSize * 2});
   }
 
-  [flex-cell][gutter] > * {
-    // cell defaults to 4 columns
-    flex-basis: calc(#{map-deep-get($gridConfig, 'phone', 'cells', 'cell-4')} - #{$gutterSize * 2});
+  // "default cell size"
+  [flex-cell][gutter] > *:not([grow]):not([shrink]) {
+    flex-basis: calc(#{map-deep-get($gridConfig, $device, 'cells', 'cell-4')} - #{$gutterSize * 2});
   }
 
-  @each $key, $value in map-deep-get($gridConfig, 'phone', 'cells') {
-    [flex-cell][gutter] > [#{$key}], [flex-cell] > .#{$key} {
+  @each $key, $value in map-deep-get($gridConfig, $device, 'cells') {
+    [flex-cell][gutter] > [#{$key}]:not([grow]):not([shrink]) {
       flex-basis: calc(#{$value} - #{$gutterSize * 2});
     }
   }
 
   // --- without gutter
-  [flex-cell][default-cell-6] > * {
-    flex-basis: map-deep-get($gridConfig, 'phone', 'cells', 'cell-6');
+  [flex-cell][default-cell-6]:not([gutter]) > *:not([grow]):not([shrink]) {
+    flex-basis: map-deep-get($gridConfig, $device, 'cells', 'cell-6')
   }
 
-  [flex-cell] > * {
+  [flex-cell]:not([gutter]) > *:not([grow]):not([shrink]) {
     // cell defaults to 4 columns
-    flex-basis: map-deep-get($gridConfig, 'phone', 'cells', 'cell-4');
+    flex-basis: map-deep-get($gridConfig, $device, 'cells', 'cell-4');
   }
 
-  @each $key, $value in map-deep-get($gridConfig, 'phone', 'cells') {
-    [flex-cell] > [#{$key}], [flex-cell] > .#{$key} {
+  @each $key, $value in map-deep-get($gridConfig, $device, 'cells') {
+    [flex-cell] > [#{$key}] {
       flex-basis: $value;
     }
   }
+}
+
+// phone (4 columns per row)
+@media (max-width: map-get($device-breakpoints, 'tablet')-1) {
+  @include flex-cell-rules('phone');
 }
 
 // tablet (8 columns per row)
 @media (min-width: map-get($device-breakpoints, 'tablet')) and (max-width: map-get($device-breakpoints, 'desktop')-1) {
-  // with gutter
-  [flex-cell][gutter][default-cell-6] > * {
-    flex-basis: calc(#{map-deep-get($gridConfig, 'tablet', 'cells', 'cell-6')} - #{$gutterSize * 2});
-  }
-
-  [flex-cell][gutter] > * {
-    // cell defaults to 4 columns
-    flex-basis: calc(#{map-deep-get($gridConfig, 'tablet', 'cells', 'cell-4')} - #{$gutterSize * 2});
-  }
-
-  @each $key, $value in map-deep-get($gridConfig, 'tablet', 'cells') {
-    [flex-cell][gutter] > [#{$key}], [flex-cell] > .#{$key} {
-      flex-basis: calc(#{$value} - #{$gutterSize * 2});
-    }
-  }
-
-  // without gutter
-  [flex-cell][default-cell-6] > * {
-    flex-basis: map-deep-get($gridConfig, 'tablet', 'cells', 'cell-6');
-  }
-
-  [flex-cell] > * {
-    // cell defaults to 4 columns
-    flex-basis: map-deep-get($gridConfig, 'tablet', 'cells', 'cell-4');
-  }
-
-  @each $key, $value in map-deep-get($gridConfig, 'tablet', 'cells') {
-    [flex-cell] > [#{$key}], [flex-cell] > .#{$key} {
-      flex-basis: $value;
-    }
-  }
+  @include flex-cell-rules('tablet');
 }
 
 // desktop (12 columns per row)
 @media (min-width: map-get($device-breakpoints, 'desktop')) {
-  // with gutter
-  [flex-cell][gutter][default-cell-6] > * {
-    flex-basis: calc(#{map-deep-get($gridConfig, 'desktop', 'cells', 'cell-6')} - #{$gutterSize * 2});
-  }
-
-  [flex-cell][gutter] > * {
-    // cell defaults to 4 columns
-    flex-basis: calc(#{map-deep-get($gridConfig, 'desktop', 'cells', 'cell-4')} - #{$gutterSize * 2});
-  }
-
-  @each $key, $value in map-deep-get($gridConfig, 'desktop', 'cells') {
-    [flex-cell][gutter] > [#{$key}], [flex-cell] > .#{$key} {
-      flex-basis: calc(#{$value} - #{$gutterSize * 2});
-    }
-  }
-
-  // without gutter
-  [flex-cell][default-cell-6] > * {
-    flex-basis: map-deep-get($gridConfig, 'desktop', 'cells', 'cell-6')
-  }
-
-  [flex-cell] > * {
-    // cell defaults to 4 columns
-    flex-basis: map-deep-get($gridConfig, 'desktop', 'cells', 'cell-4');
-  }
-
-  @each $key, $value in map-deep-get($gridConfig, 'desktop', 'cells') {
-    [flex-cell] > [#{$key}], [flex-cell] > .#{$key} {
-      flex-basis: $value;
-    }
-  }
+  @include flex-cell-rules('desktop');
 }

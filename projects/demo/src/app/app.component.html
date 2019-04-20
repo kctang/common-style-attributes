@@ -1,133 +1,21 @@
-<div padding typography-title>Style Attributes</div>
-<mat-tab-group>
-    <mat-tab label="Box Effects">
-        <div flex-cell gutter padding>
-            <div background-green cell-4-mobile cell-2 shrink>margin</div>
-            <div background-green cell-4-mobile cell-10>...</div>
-            <div background-green cell-2 shrink>margin-vertical</div>
-            <div background-green cell-10 grow>...</div>
-            <div background-green cell-2 shrink>margin-horizontal</div>
-            <div background-green cell-10 grow>...</div>
-            <div background-green cell-2 shrink>margin-top</div>
-            <div background-green cell-10 grow>...</div>
-            <div background-green cell-2 shrink>margin-bottom</div>
-            <div background-green cell-10 grow>...</div>
-            <div background-green cell-2 shrink>margin-left</div>
-            <div background-green cell-10 grow>...</div>
-            <div background-green cell-2 shrink>margin-right</div>
-            <div background-green cell-10 grow>...</div>
-            <div background-green cell-2 shrink>padding</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>padding-vertical</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>padding-horizontal</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>padding-top</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>padding-bottom</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>padding-left</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>padding-right</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>no-margin</div>
-            <div cell-10 grow>...</div>
-            <div cell-2 shrink>no-padding</div>
-            <div cell-10 grow>...</div>
-        </div>
-
-
-
-        <mat-toolbar>
-            <span grow>Box Effects</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-    <mat-tab label="Box Sizes">
-        <mat-toolbar>
-            <span grow>Box Sizes</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-    <mat-tab label="Colors">
-        <mat-toolbar>
-            <span grow>Colors</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-    <mat-tab label="Full Page">
-        <mat-toolbar>
-            <span grow>Full Page</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-    <mat-tab label="Layout">
-        <mat-toolbar>
-            <span grow>Layout</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-    <mat-tab label="Text Alignment">
-        <mat-toolbar>
-            <span grow>Text Alignment</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-    <mat-tab label="Typography">
-        <mat-toolbar>
-            <span grow>Typography</span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>code</mat-icon>
-                </button>
-            </span>
-        </mat-toolbar>
-        <div>description...</div>
-        <pre><code [highlight]="'ok'"></code></pre>
-    </mat-tab>
-</mat-tab-group>
-
-
-cell-x
-left right center
-top bottom vcenter
-grow shrink
-debug
-gutter
+<div typography-body-1>
+    <div typography-title padding>Style Attributes</div>
+    <mat-tab-group selectedIndex="4">
+        <mat-tab label="flex-cell">
+            <app-flex-cell></app-flex-cell>
+        </mat-tab>
+        <mat-tab label="box">
+            <app-box></app-box>
+        </mat-tab>
+        <mat-tab label="colors">
+            <app-colors></app-colors>
+        </mat-tab>
+        <mat-tab label="size">
+            <app-size></app-size>
+        </mat-tab>
+        <mat-tab label="typography">
+            <app-typography></app-typography>
+        </mat-tab>
+    </mat-tab-group>
+</div>
 

@@ -1,0 +1,32 @@
+<div padding>
+    <div shadow padding>
+        <div typography-subheading-2>Attributes</div>
+        <div flex-cell gutter grow-items>
+            <div *ngFor="let attribute of docs.attributes">
+                <mat-chip-list>
+                    <mat-chip *ngFor="let name of attribute.names">{{name}}</mat-chip>
+                </mat-chip-list>
+                <div [innerHTML]="attribute.description |safeHtml"></div>
+            </div>
+        </div>
+    </div>
+
+    <div divider margin></div>
+
+    <div shadow padding>
+        <div typography-subheading-2>Demos</div>
+        <div flex-cell gutter default-cell-12 *ngFor="let demo of docs.demos">
+            <div typography-body-2>{{demo.title}}</div>
+            <div [innerHTML]="demo.description"></div>
+            <div background-yellow-100 flex-cell gutter grow-items
+                 [attr.default-cell-6]="demo.wide ? null:true"
+                 [attr.default-cell-12]="demo.wide ? true:null">
+                <div [innerHTML]="demo.code |safeHtml"></div>
+                <div>
+                    <pre no-margin><code [highlight]="demo.code"></code></pre>
+                </div>
+            </div>
+            <div divider margin-top></div>
+        </div>
+    </div>
+</div>
