@@ -1,24 +1,40 @@
 <div typography-body-1>
     <div padding>
-        <div typography-headline>ng-style-attributes</div>
+        <div flex-cell gutter>
+            <div shrink typography-headline>common-style-attributes</div>
+            <a shrink href="https://www.npmjs.com/package/common-style-attributes"><img
+                    src="https://img.shields.io/npm/v/common-style-attributes.svg"></a>
+            <a shrink href="http://github.com/kctang/common-style-attributes"><img
+                    src="https://travis-ci.org/kctang/common-style-attributes.svg"></a>
+            <a shrink href="http://github.com/kctang/common-style-attributes"><img
+                    src="https://img.shields.io/npm/l/common-style-attributes.svg"></a>
+        </div>
         <p>
             HTML attributes to manage layout and common styling properties for HTML elements.
-        </p>
-        <p>By using these attributes, we should be able to handle 80% of an application styling
-            needs. For the rest, you can always use CSS/SCSS directly.
         </p>
         <p>Why? Because styling every HTML component with CSS/SCSS just too tedious, hard to
             maintain and easily leads to styling inconsistencies.
         </p>
-
         <div divider margin-vertical></div>
         <div typography-subheading-1>Getting Started</div>
         <div>
             <ul>
-                <li>This library was designed to be used with Angular applications.</li>
+                <li>Install from NPM:
+                    <p><code>npm install common-style-attributes</code></p>
+                </li>
+                <li>Add this to a SCSS file in your project:
+                    <p><code>@import
+                        '~common-style-attributes/styles/common-style-attributes';</code></p>
+                </li>
+                <li>To use typography styles, add this to a SCSS file in your project:
+                    <p><code>@import '~common-style-attributes/styles/csa-typography';</code></p>
+                </li>
             </ul>
         </div>
-
+        <div padding>
+            [ <a href="https://stackblitz.com/edit/common-style-attributes-starter">StackBlitz
+            Template</a> ]
+        </div>
     </div>
     <div divider></div>
     <mat-tab-group>
@@ -38,4 +54,10 @@
             <app-typography></app-typography>
         </mat-tab>
     </mat-tab-group>
+    <div divider></div>
+    <div padding>
+        <div typography-subheading-1>Source Code</div>
+        <a href="https://github.com/kctang/common-style-attributes">common-style-attributes</a> is
+        hosted on GitHub.
+    </div>
 </div>

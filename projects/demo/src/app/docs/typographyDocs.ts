@@ -24,6 +24,7 @@ export const typographyDocs = {
   demos: [
     {
       title: 'Basic Usage',
+      wide: true,
       code: `<div debug flex-cell gutter>
     <div cell-12 typography-display-4>typography-display-4</div>
     <div cell-12 typography-display-3>typography-display-3</div>
