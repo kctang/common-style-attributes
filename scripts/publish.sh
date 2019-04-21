@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 pushd dist/common-style-attributes
-npm publish --tag
+npm publish
 popd
