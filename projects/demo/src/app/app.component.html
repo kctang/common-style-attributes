@@ -1,6 +1,27 @@
 <div typography-body-1>
-    <div typography-title padding>Style Attributes</div>
-    <mat-tab-group selectedIndex="4">
+    <div padding>
+        <div typography-headline>ng-style-attributes</div>
+        <p>
+            HTML attributes to manage layout and common styling properties for HTML elements.
+        </p>
+        <p>By using these attributes, we should be able to handle 80% of an application styling
+            needs. For the rest, you can always use CSS/SCSS directly.
+        </p>
+        <p>Why? Because styling every HTML component with CSS/SCSS just too tedious, hard to
+            maintain and easily leads to styling inconsistencies.
+        </p>
+
+        <div divider margin-vertical></div>
+        <div typography-subheading-1>Getting Started</div>
+        <div>
+            <ul>
+                <li>This library was designed to be used with Angular applications.</li>
+            </ul>
+        </div>
+
+    </div>
+    <div divider></div>
+    <mat-tab-group>
         <mat-tab label="flex-cell">
             <app-flex-cell></app-flex-cell>
         </mat-tab>
@@ -18,4 +39,3 @@
         </mat-tab>
     </mat-tab-group>
 </div>
-
