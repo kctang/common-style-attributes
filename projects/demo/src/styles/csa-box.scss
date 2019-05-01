@@ -1,61 +1,64 @@
+$csa-margin: 16px !default;
+$csa-padding: 16px !default;
+
 [margin] {
-  margin: 16px;
+  margin: $csa-margin;
 }
 
 [margin-horizontal] {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: $csa-margin;
+  margin-right: $csa-margin;
 }
 
 [margin-vertical] {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: $csa-margin;
+  margin-bottom: $csa-margin;
 }
 
 [margin-top] {
-  margin-top: 16px;
+  margin-top: $csa-margin;
 }
 
 [margin-bottom] {
-  margin-bottom: 16px;
+  margin-bottom: $csa-margin;
 }
 
 [margin-left] {
-  margin-left: 16px;
+  margin-left: $csa-margin;
 }
 
 [margin-right] {
-  margin-right: 16px;
+  margin-right: $csa-margin;
 }
 
 [padding] {
-  padding: 16px;
+  padding: $csa-padding;
 }
 
 [padding-horizontal] {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: $csa-padding;
+  padding-right: $csa-padding;
 }
 
 [padding-vertical] {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: $csa-padding;
+  padding-bottom: $csa-padding;
 }
 
 [padding-top] {
-  padding-top: 16px;
+  padding-top: $csa-padding;
 }
 
 [padding-bottom] {
-  padding-bottom: 16px;
+  padding-bottom: $csa-padding;
 }
 
 [padding-left] {
-  padding-left: 16px;
+  padding-left: $csa-padding;
 }
 
 [padding-right] {
-  padding-right: 16px;
+  padding-right: $csa-padding;
 }
 
 [no-margin] {

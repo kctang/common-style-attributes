@@ -1,5 +1,7 @@
 @import "csa-core";
 
+$csa-gutter: 4px !default;
+
 $gridConfig: (
         phone: (
                 cells: (
@@ -103,7 +105,7 @@ $gridConfig: (
   justify-content: center;
 }
 
-@mixin flex-cell-rules($device, $gutterSize: 4px) {
+@mixin flex-cell-rules($device, $gutterSize: $csa-gutter) {
   [flex-cell] {
     display: flex;
     flex-wrap: wrap;

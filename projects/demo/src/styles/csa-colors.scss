@@ -1,7 +1,10 @@
 @import "csa-core";
 
-$mat-default-key: 800;
-$mat-default-background-key: 100;
+$csa-default-color-key: 800 !default;
+$csa-default-background-color-key: 100 !default;
+
+$mat-default-key: $csa-default-color-key;
+$mat-default-background-key: $csa-default-background-color-key;
 $mat-palettes: (
         red: (
                 50: #ffebee,

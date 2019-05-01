@@ -6,7 +6,7 @@
                 <mat-chip-list>
                     <mat-chip *ngFor="let name of attribute.names">{{name}}</mat-chip>
                 </mat-chip-list>
-                <div [innerHTML]="attribute.description |safeHtml"></div>
+                <div [innerHTML]="attribute.description | safeHtml"></div>
             </div>
         </div>
     </div>

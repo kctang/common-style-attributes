@@ -1,8 +1,127 @@
 @import '~@angular/material/theming';
 
-$typography-config: mat-typography-config(
-        $font-family: 'Roboto, "Helvetica Neue", sans-serif'
-);
+$csa-font-family: 'Roboto, "Helvetica Neue", sans-serif' !default;
+
+$csa-display-4-font-size: 72px !default;
+$csa-display-4-line-height: $csa-display-4-font-size !default;
+$csa-display-4-font-weight: 400 !default;
+$csa-display-4-font-family: $csa-font-family !default;
+
+$csa-display-3-font-size: 62px !default;
+$csa-display-3-line-height: $csa-display-3-font-size !default;
+$csa-display-3-font-weight: 300 !default;
+$csa-display-3-font-family: $csa-font-family !default;
+
+$csa-display-2-font-size: 45px !default;
+$csa-display-2-line-height: 48px !default;
+$csa-display-2-font-weight: 400 !default;
+$csa-display-2-font-family: $csa-font-family !default;
+
+$csa-display-1-font-size: 32px !default;
+$csa-display-1-line-height: 40px !default;
+$csa-display-1-font-weight: 500 !default;
+$csa-display-1-font-family: $csa-font-family !default;
+
+$csa-headline-font-size: 28px !default;
+$csa-headline-line-height: 32px !default;
+$csa-headline-font-weight: 400 !default;
+$csa-headline-font-family: $csa-font-family !default;
+
+$csa-title-font-size: 26px !default;
+$csa-title-line-height: 32px !default;
+$csa-title-font-weight: 300 !default;
+$csa-title-font-family: $csa-font-family !default;
+
+$csa-subheading-2-font-size: 20px !default;
+$csa-subheading-2-line-height: 28px !default;
+$csa-subheading-2-font-weight: 400 !default;
+$csa-subheading-2-font-family: $csa-font-family !default;
+
+$csa-subheading-1-font-size: 18px !default;
+$csa-subheading-1-line-height: 24px !default;
+$csa-subheading-1-font-weight: 500 !default;
+$csa-subheading-1-font-family: $csa-font-family !default;
+
+$csa-body-2-font-size: 16px !default;
+$csa-body-2-line-height: 24px !default;
+$csa-body-2-font-weight: 500 !default;
+$csa-body-2-font-family: $csa-font-family !default;
+
+$csa-body-1-font-size: 14px !default;
+$csa-body-1-line-height: 20px !default;
+$csa-body-1-font-weight: 400 !default;
+$csa-body-1-font-family: $csa-font-family !default;
+
+$csa-caption-font-size: 12px !default;
+$csa-caption-line-height: 20px !default;
+$csa-caption-font-weight: 400 !default;
+$csa-caption-font-family: $csa-font-family !default;
+
+$csa-button-font-size: 14px !default;
+$csa-button-line-height: 14px !default;
+$csa-button-font-weight: 500 !default;
+$csa-button-font-family: $csa-font-family !default;
+
+$csa-input-font-size: inherit !default;
+$csa-input-line-height: 1.125 !default;
+$csa-input-font-weight: 400 !default;
+$csa-input-font-family: $csa-font-family !default;
+
+$typography-config: mat-typography-config($csa-font-family);
+$typography-config: map-merge($typography-config, (
+        display-4: mat-typography-level(
+                        $csa-display-4-font-size, $csa-display-4-line-height,
+                        $csa-display-4-font-weight, $csa-display-4-font-family
+        ),
+        display-3: mat-typography-level(
+                        $csa-display-3-font-size, $csa-display-3-line-height,
+                        $csa-display-3-font-weight, $csa-display-3-font-family
+        ),
+        display-2: mat-typography-level(
+                        $csa-display-2-font-size, $csa-display-2-line-height,
+                        $csa-display-2-font-weight, $csa-display-2-font-family
+        ),
+        display-1: mat-typography-level(
+                        $csa-display-1-font-size, $csa-display-1-line-height,
+                        $csa-display-1-font-weight, $csa-display-1-font-family
+        ),
+        headline: mat-typography-level(
+                        $csa-headline-font-size, $csa-headline-line-height,
+                        $csa-headline-font-weight, $csa-headline-font-family
+        ),
+        title: mat-typography-level(
+                        $csa-title-font-size, $csa-title-line-height,
+                        $csa-title-font-weight, $csa-title-font-family
+        ),
+        subheading-2: mat-typography-level(
+                        $csa-subheading-2-font-size, $csa-subheading-2-line-height,
+                        $csa-subheading-2-font-weight, $csa-subheading-2-font-family
+        ),
+        subheading-1: mat-typography-level(
+                        $csa-subheading-1-font-size, $csa-subheading-1-line-height,
+                        $csa-subheading-1-font-weight, $csa-subheading-1-font-family
+        ),
+        body-2: mat-typography-level(
+                        $csa-body-2-font-size, $csa-body-2-line-height,
+                        $csa-body-2-font-weight, $csa-body-2-font-family
+        ),
+        body-1: mat-typography-level(
+                        $csa-body-1-font-size, $csa-body-1-line-height,
+                        $csa-body-1-font-weight, $csa-body-1-font-family
+        ),
+        caption: mat-typography-level(
+                        $csa-caption-font-size, $csa-caption-line-height,
+                        $csa-caption-font-weight, $csa-caption-font-family
+        ),
+        button: mat-typography-level(
+                        $csa-button-font-size, $csa-button-line-height,
+                        $csa-button-font-weight, $csa-button-font-family
+        ),
+        input: mat-typography-level(
+                        $csa-input-font-size, $csa-input-line-height,
+                        $csa-input-font-weight, $csa-input-font-family
+        )
+));
 @include mat-core($typography-config);
 
 @mixin app-typography($level: 'body-1') {
@@ -11,65 +130,117 @@ $typography-config: mat-typography-config(
 
 [typography-display-4] {
   @include app-typography('display-4');
+}
+
+[typography-display-4-contrast] {
+  @include app-typography('display-4');
   opacity: 0.54;
 }
 
 [typography-display-3] {
+  @include app-typography('display-3');
+}
+
+[typography-display-3-contrast] {
   @include app-typography('display-3');
   opacity: 0.54;
 }
 
 [typography-display-2] {
   @include app-typography('display-2');
+}
+
+[typography-display-2-contrast] {
+  @include app-typography('display-2');
   opacity: 0.54;
 }
 
 [typography-display-1] {
+  @include app-typography('display-1');
+}
+
+[typography-display-1-contrast] {
   @include app-typography('display-1');
   opacity: 0.54;
 }
 
 [typography-caption] {
   @include app-typography('caption');
+}
+
+[typography-caption-contrast] {
+  @include app-typography('caption');
   opacity: 0.54;
 }
 
 [typography-headline] {
+  @include app-typography('headline');
+}
+
+[typography-headline-contrast] {
   @include app-typography('headline');
   opacity: 0.87;
 }
 
 [typography-title] {
   @include app-typography('title');
+}
+
+[typography-title-contrast] {
+  @include app-typography('title');
   opacity: 0.87;
 }
 
 [typography-subheading-2] {
+  @include app-typography('subheading-2');
+}
+
+[typography-subheading-2-contrast] {
   @include app-typography('subheading-2');
   opacity: 0.87;
 }
 
 [typography-subheading-1] {
   @include app-typography('subheading-1');
+}
+
+[typography-subheading-1-contrast] {
+  @include app-typography('subheading-1');
   opacity: 0.87;
 }
 
 [typography-body-1] {
+  @include app-typography('body-1');
+}
+
+[typography-body-1-contrast] {
   @include app-typography('body-1');
   opacity: 0.87;
 }
 
 [typography-body-2] {
   @include app-typography('body-2');
+}
+
+[typography-body-2-contrast] {
+  @include app-typography('body-2');
   opacity: 0.87;
 }
 
 [typography-button] {
   @include app-typography('button');
+}
+
+[typography-button-contrast] {
+  @include app-typography('button');
   opacity: 0.87;
 }
 
 [typography-input] {
+  @include app-typography('input');
+}
+
+[typography-input-contrast] {
   @include app-typography('input');
   opacity: 0.87;
 }
