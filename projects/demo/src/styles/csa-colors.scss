@@ -6,7 +6,7 @@ $csa-default-background-color-key: 100 !default;
 $mat-default-key: $csa-default-color-key;
 $mat-default-background-key: $csa-default-background-color-key;
 $mat-palettes: (
-        red: (
+        'red': (
                 50: #ffebee,
                 100: #ffcdd2,
                 200: #ef9a9a,
@@ -22,7 +22,7 @@ $mat-palettes: (
                 A400: #ff1744,
                 A700: #d50000
         ),
-        pink: (
+        'pink': (
                 50: #fce4ec,
                 100: #f8bbd0,
                 200: #f48fb1,
@@ -38,7 +38,7 @@ $mat-palettes: (
                 A400: #f50057,
                 A700: #c51162
         ),
-        purple: (
+        'purple': (
                 50: #f3e5f5,
                 100: #e1bee7,
                 200: #ce93d8,
@@ -54,7 +54,7 @@ $mat-palettes: (
                 A400: #d500f9,
                 A700: #aa00ff
         ),
-        indigo: (
+        'indigo': (
                 50: #e8eaf6,
                 100: #c5cae9,
                 200: #9fa8da,
@@ -70,7 +70,7 @@ $mat-palettes: (
                 A400: #3d5afe,
                 A700: #304ffe
         ),
-        blue: (
+        'blue': (
                 50: #e3f2fd,
                 100: #bbdefb,
                 200: #90caf9,
@@ -86,7 +86,7 @@ $mat-palettes: (
                 A400: #2979ff,
                 A700: #2962ff
         ),
-        cyan: (
+        'cyan': (
                 50: #e0f7fa,
                 100: #b2ebf2,
                 200: #80deea,
@@ -102,7 +102,7 @@ $mat-palettes: (
                 A400: #00e5ff,
                 A700: #00b8d4
         ),
-        teal: (
+        'teal': (
                 50: #e0f2f1,
                 100: #b2dfdb,
                 200: #80cbc4,
@@ -118,7 +118,7 @@ $mat-palettes: (
                 A400: #1de9b6,
                 A700: #00bfa5
         ),
-        green: (
+        'green': (
                 50: #e8f5e9,
                 100: #c8e6c9,
                 200: #a5d6a7,
@@ -134,7 +134,7 @@ $mat-palettes: (
                 A400: #00e676,
                 A700: #00c853
         ),
-        lime: (
+        'lime': (
                 50: #f9fbe7,
                 100: #f0f4c3,
                 200: #e6ee9c,
@@ -150,7 +150,7 @@ $mat-palettes: (
                 A400: #c6ff00,
                 A700: #aeea00
         ),
-        yellow: (
+        'yellow': (
                 50: #fffde7,
                 100: #fff9c4,
                 200: #fff59d,
@@ -166,7 +166,7 @@ $mat-palettes: (
                 A400: #ffea00,
                 A700: #ffd600
         ),
-        amber: (
+        'amber': (
                 50: #fff8e1,
                 100: #ffecb3,
                 200: #ffe082,
@@ -182,7 +182,7 @@ $mat-palettes: (
                 A400: #ffc400,
                 A700: #ffab00
         ),
-        orange: (
+        'orange': (
                 50: #fff3e0,
                 100: #ffe0b2,
                 200: #ffcc80,
@@ -198,7 +198,7 @@ $mat-palettes: (
                 A400: #ff9100,
                 A700: #ff6d00
         ),
-        brown: (
+        'brown': (
                 50: #efebe9,
                 100: #d7ccc8,
                 200: #bcaaa4,
@@ -214,7 +214,7 @@ $mat-palettes: (
                 A400: #8d6e63,
                 A700: #5d4037
         ),
-        grey: (
+        'grey': (
                 50: #fafafa,
                 100: #f5f5f5,
                 200: #eeeeee,
