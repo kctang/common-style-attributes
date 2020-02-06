@@ -1,10 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2020-02-06
+
+### Changed
+- Update Angular to 9.0.0-rc.14. Angular is only used to generate this package's site. It has no impact to generated artifact.
+
 ## [0.0.4] - 2019-05-31
 
 ### Fixed
-
 - Specify color in quotes to prevent SCSS compilation warning.
 
 ## [0.0.3] - 2019-05-01
