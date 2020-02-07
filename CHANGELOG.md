@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.1.1] - 2020-02-07
+
+### Changed
+- Update Angular to 9.0.0. Angular is only used to generate this package's site. It has no impact to generated artifact.
+
 ## [0.1.0] - 2020-02-06
 
 ### Changed
@@ -26,7 +31,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/kctang/common-style-attributes/compare/v0.0.4...HEAD
+[Unreleased]: https://github.com/kctang/common-style-attributes/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/kctang/common-style-attributes/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/kctang/common-style-attributes/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/kctang/common-style-attributes/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/kctang/common-style-attributes/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/kctang/common-style-attributes/releases/tag/v0.0.2
